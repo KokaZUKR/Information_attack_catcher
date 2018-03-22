@@ -13,6 +13,7 @@ def parse_pravda(keyword, save_big_csv=1, save_small_csv=1, save_all_and_plot=1)
 
     #  REWRITE THIS LOOP INTO USR_FUNCTIONS!!!!
     #  REWRITE FROM LXML TO BEAUTIFUL SOUP!!!!!
+    #  FIX BIDLOCODE
 
     i = 1
     while curr_date > to:
