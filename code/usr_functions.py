@@ -35,7 +35,10 @@ def plot_count_day(period, count_news):
     plt.xticks(period, [str(i) for i in period], rotation='vertical')
     plt.show()
 
-    # plt.figure(num=None, figsize=(15, 8))
-    # plt.plot(alldays, toVis['title'])
-    # plt.xticks(alldays, [str(i) for i in alldays], rotation='vertical')
-    # plt.show()
+
+def new_news(new_parsed, old_parsed):
+    new = []
+    for i in new_parsed:
+        if i not in old_parsed:
+            new.append(i)
+    return new
