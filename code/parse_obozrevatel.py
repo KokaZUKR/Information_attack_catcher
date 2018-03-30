@@ -7,9 +7,6 @@ from lxml import html
 from code.usr_functions import leave_list, get_dates, unlist_nested, plot_count_day, months24
 
 
-# https://www.obozrevatel.com/ukr/search/?q=нато
-
-
 def parse_obozrevatel(keyword, save_big_csv=1, save_small_csv=1, save_all_and_plot=1):
     titles = []
     dates = []
