@@ -50,14 +50,14 @@ def parse_gordon(keyword, save_big_csv=1, save_small_csv=1, save_all_and_plot=1)
          })
 
     if save_big_csv == 1:
-        fullDF.to_csv('saved_gordon/gd_big_df.csv', index=False)
+        fullDF.to_csv('saved_data/gordon_big_df.csv', index=False)
 
     if save_small_csv == 1:
         lightDF = fullDF.groupby('date').count()
-        lightDF.to_csv('saved_gordon/gd_light_df.csv')
+        lightDF.to_csv('saved_data/gordon_light_df.csv')
 
     if save_all_and_plot == 1:
-        dftom = pd.read_csv('saved_gordon/gd_light_df.csv')
+        dftom = pd.read_csv('saved_data/gordon_light_df.csv')
         alldays = []
         step = datetime.timedelta(days=1)
         while to <= now:
@@ -72,7 +72,7 @@ def parse_gordon(keyword, save_big_csv=1, save_small_csv=1, save_all_and_plot=1)
         dftom['title'] = dftom['title'].astype('int')
         toVis = toVis.merge(dftom, how='left')
         toVis = toVis.fillna(0)
-        toVis.to_csv('saved_gordon/gd_light_df_all_dates.csv', index=False)
+        toVis.to_csv('saved_data/gordon_light_df_all_dates.csv', index=False)
 
         plot_count_day(alldays, toVis['title'], name='GORDON')
         print('gordon WAS PARSED')
@@ -80,4 +80,3 @@ def parse_gordon(keyword, save_big_csv=1, save_small_csv=1, save_all_and_plot=1)
     return 0
 
 
-parse_gordon('савченко')

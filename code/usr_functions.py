@@ -46,6 +46,7 @@ def new_news(new_parsed, old_parsed):
 
 
 months24 = {
+    'січня': 1,
     'сiчня': 1,
     'лютого': 2,
     'березня': 3,
