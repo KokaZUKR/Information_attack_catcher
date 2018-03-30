@@ -1,8 +1,10 @@
+import datetime
+
 import pandas as pd
 import requests
 from lxml import html
 
-from code.usr_functions import *
+from code.usr_functions import leave_list, get_dates, unlist_nested, cyrillic_url, plot_count_day
 
 
 def parse_pravda(keyword, save_big_csv=1, save_small_csv=1, save_all_and_plot=1):
@@ -65,7 +67,7 @@ def parse_pravda(keyword, save_big_csv=1, save_small_csv=1, save_all_and_plot=1)
         toVis = toVis.fillna(0)
         toVis.to_csv('saved_data/pravda_light_df_all_dates.csv', index=False)
 
-        plot_count_day(alldays, toVis['title'])
-        print('https://www.pravda.com.ua WAS PARSED')
+        plot_count_day(alldays, toVis['title'], name='PRAVDA')
+        print('pravda WAS PARSED')
 
     return 0

@@ -18,7 +18,7 @@ for i in range(n_iterations):
     page = requests.get('https://www.pravda.com.ua/news/')
     tree = html.fromstring(page.content)
     titles_parsed = tree.xpath('//div[@class="block block_news_all"]//div[@class="article__title"]/a/text()')
-    print('===========================')
+    print('===========================================================================================================')
     print('Parsed on {} sec:'.format(reload_sec * i))
 
     if i == 0:
@@ -36,7 +36,7 @@ for i in range(n_iterations):
         del new_titles[:]
         print('\nAll titles:')
         print(tit)
-    print('===========================')
+    print('===========================================================================================================')
 
     time.sleep(reload_sec)
 

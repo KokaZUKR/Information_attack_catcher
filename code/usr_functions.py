@@ -29,9 +29,10 @@ def unlist_nested(lst):
     return [item for sublist in lst for item in sublist]
 
 
-def plot_count_day(period, count_news):
+def plot_count_day(period, count_news, name='UNKNOWN'):
     plt.figure(num=None, figsize=(15, 8))
     plt.plot(period, count_news)
+    plt.title(name)
     plt.xticks(period, [str(i) for i in period], rotation='vertical')
     plt.show()
 
@@ -42,3 +43,19 @@ def new_news(new_parsed, old_parsed):
         if i not in old_parsed:
             new.append(i)
     return new
+
+
+months24 = {
+    'січня': 1,
+    'лютого': 2,
+    'березня': 3,
+    'квітня': 4,
+    'травня': 5,
+    'червня': 6,
+    'липня': 7,
+    'серпня': 8,
+    'вересня': 9,
+    'жовтня': 10,
+    'листопада': 11,
+    'грудня': 12,
+}
